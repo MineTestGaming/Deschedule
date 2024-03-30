@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Deschedule.Main": {
+      "commandName": "Project",
+      "commandLineArgs": "--videoPath C:/TestVideo.mp4"
+    }
+  }
+}
