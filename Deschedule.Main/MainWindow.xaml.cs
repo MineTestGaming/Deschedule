@@ -61,6 +61,8 @@ namespace Deschedule.Main
 
         public void SetWallpaper()
         {
+            this.WindowStyle = WindowStyle.None;
+            this.ResizeMode = ResizeMode.NoResize;
             var desktop = Win32Api.FindWindow("Progman", null); // 设置桌面窗口变量
             IntPtr result = IntPtr.Zero;
             Win32Api.SendMsgTimeout(desktop, 0x52c,UIntPtr.Zero,IntPtr.Zero,0,2,result); // 给桌面发送0x52c信息以使其分解
@@ -80,6 +82,7 @@ namespace Deschedule.Main
             this.Left = 0;
             this.Height = Win32Api.GetSystemMetrics(1); // 调整窗口为屏幕高度
             this.Width = Win32Api.GetSystemMetrics(0); // 同理，屏幕高度
+            SetWpLayer.IsEnabled = false;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -92,7 +95,22 @@ namespace Deschedule.Main
             {
                 SetWallpaper();
             }
+            else
+            {
+                this.WindowStyle = WindowStyle.SingleBorderWindow;
+                this.ResizeMode = ResizeMode.CanResize;
+            }
 
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
+
+        private void SetWpLayer_Click(object sender, RoutedEventArgs e)
+        {
+            SetWallpaper();
         }
     }
 }

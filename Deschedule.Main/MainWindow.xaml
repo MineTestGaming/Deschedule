@@ -5,55 +5,207 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fluent="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
         xmlns:local="clr-namespace:Deschedule.Main"
+        xmlns:tb="clr-namespace:H.NotifyIcon;assembly=H.NotifyIcon.WPF"
         mc:Ignorable="d"
         WindowStyle="None"
         ResizeMode="NoResize"
         Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Frame Name="Background"/>
+        <tb:TaskbarIcon IconSource="Icon.ico">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Name="SetWpLayer" Header="手动设置为壁纸层" Click="SetWpLayer_Click" />
+                    <Separator />
+                    <MenuItem Name="Exit" Header="退出" Click="Exit_Click" />
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+        <Frame Name="Background" />
         <Grid x:Name="Cover">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Grid Grid.Column="10" Grid.ColumnSpan="5"  Grid.RowSpan="15" Margin="20" >
-                <Rectangle Fill="{fluent:AcrylicBrush TargetName=Background, TintColor=White, TintOpacity=0.6}" RadiusX="8" RadiusY="8"/>
-                <TextBlock x:Name="Display"/>
+            <Grid Grid.Column="10" Grid.ColumnSpan="5"  Grid.RowSpan="15" Margin="20">
+                <Rectangle Fill="{fluent:AcrylicBrush TargetName=Background, TintColor=White, TintOpacity=0.6}" RadiusX="8" RadiusY="8" />
+                <Grid Name="nineLessons" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!--时间-->
+                    <Viewbox Margin="10">
+                        <TextBlock x:Name="Duration91" Text="07:05-08:30"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="1">
+                        <TextBlock x:Name="Duration92" Text="08:40-09:20"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="2">
+                        <TextBlock x:Name="Duration93" Text="09:40-10:20" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="3">
+                        <TextBlock x:Name="Duration94" Text="10:30-11:10"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="4">
+                        <TextBlock x:Name="Duration95" Text="11:20-12:20"   HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="5">
+                        <TextBlock x:Name="Duration96" Text="14:10-14:55"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="6">
+                        <TextBlock x:Name="Duration97" Text="15:05-15:45"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="7">
+                        <TextBlock x:Name="Duration98" Text="15:55-16:35"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="8">
+                        <TextBlock x:Name="Duration99" Text="16:45-17:25"   HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <!--课程安排-->
+                    <Viewbox Margin="10" Grid.Column="1" >
+                        <TextBlock  x:Name="Lesson91" Text="化学" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1" Grid.Row="1">
+                        <TextBlock  x:Name="Lesson92" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="2">
+                        <TextBlock  x:Name="Lesson93" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="3">
+                        <TextBlock  x:Name="Lesson94" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="4">
+                        <TextBlock  x:Name="Lesson95" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="5" >
+                        <TextBlock  x:Name="Lesson96" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="6">
+                        <TextBlock  x:Name="Lesson97" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="7">
+                        <TextBlock  x:Name="Lesson98" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="8">
+                        <TextBlock  x:Name="Lesson99" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                </Grid>
+                <Grid Name="eightLessons" Visibility="Visible">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        
+                    </Grid.RowDefinitions>
+                    <!--时间-->
+                    <Viewbox Margin="10">
+                        <TextBlock x:Name="Duration81" Text="07:05-08:30"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="1">
+                        <TextBlock x:Name="Duration82" Text="08:40-09:20"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="2">
+                        <TextBlock x:Name="Duration83" Text="09:40-10:20" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="3">
+                        <TextBlock x:Name="Duration84" Text="10:30-11:10"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="4">
+                        <TextBlock x:Name="Duration85" Text="11:20-12:20"   HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="5">
+                        <TextBlock x:Name="Duration86" Text="14:10-14:55"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="6">
+                        <TextBlock x:Name="Duration87" Text="15:05-15:45"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Row="7">
+                        <TextBlock x:Name="Duration88" Text="15:55-16:35"  HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Viewbox>
+
+
+                    <!--课程安排-->
+                    <Viewbox Margin="10" Grid.Column="1" >
+                        <TextBlock  x:Name="Lesson81" Text="化学" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1" Grid.Row="1">
+                        <TextBlock  x:Name="Lesson82" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="2">
+                        <TextBlock  x:Name="Lesson83" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="3">
+                        <TextBlock  x:Name="Lesson84" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="4">
+                        <TextBlock  x:Name="Lesson85" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="5" >
+                        <TextBlock  x:Name="Lesson86" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="6">
+                        <TextBlock  x:Name="Lesson87" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+                    <Viewbox Margin="10" Grid.Column="1"  Grid.Row="7">
+                        <TextBlock  x:Name="Lesson88" Text="化学"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Viewbox>
+
+                </Grid>
+
             </Grid>
         </Grid>
-
     </Grid>
 </Window>
