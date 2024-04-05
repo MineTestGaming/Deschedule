@@ -23,6 +23,7 @@ namespace Deschedule.Main
         public WebView()
         {
             InitializeComponent();
+            Webview.LoadUrl(MainWindow.arguments["webAddress"]);
         }
     }
 }

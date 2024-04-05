@@ -58,6 +58,10 @@ namespace Deschedule.Main
             {
                 Models.ScheduleMgr.ImportSettings(arguments["jsonSettings"]);
             }
+            if (arguments.ContainsKey("webAddress"))
+            {
+                Background.Navigate(new WebView()) ;
+            }
 
 #if DEBUG
             Models.ScheduleMgr.GenerateDummyData();

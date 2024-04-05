@@ -2,11 +2,31 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-  </PropertyGroup>
+
+</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(PlatformTarget)' == 'x86'">
+		<RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">win-x86</RuntimeIdentifier>
+		<SelfContained Condition="'$(SelfContained)' == ''">false</SelfContained>
+	</PropertyGroup>
+	
+<PropertyGroup Condition="'$(PlatformTarget)' == 'x64'">
+  <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">win-x64</RuntimeIdentifier>
+  <SelfContained Condition="'$(SelfContained)' == ''">false</SelfContained>
+</PropertyGroup>
+
+	<PropertyGroup Condition="'$(PlatformTarget)' == 'arm64'">
+		<RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">win-arm64</RuntimeIdentifier>
+		<SelfContained Condition="'$(SelfContained)' == ''">false</SelfContained>
+	</PropertyGroup>
+	<PropertyGroup>
+		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+	</PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="class\**" />
@@ -20,10 +40,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CefSharp.Common.NETCore" Version="123.0.60" />
+    <PackageReference Include="CefSharp.Wpf.NETCore" Version="123.0.60" />
     <PackageReference Include="FluentWPF" Version="0.10.2" />
     <PackageReference Include="H.NotifyIcon" Version="2.0.124" />
     <PackageReference Include="H.NotifyIcon.Wpf" Version="2.0.124" />
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2420.47" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

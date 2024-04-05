@@ -2,7 +2,7 @@
   "profiles": {
     "Deschedule.Main": {
       "commandName": "Project",
-      "commandLineArgs": "--imagePath \"D:\\thumb-1920-1137852_waifu2x_2x_2n_png.png\" --jsonSettings D:/Output.json"
+      "commandLineArgs": "--webAddress https://www.youtube.com/watch%3Fv%3DdQw4w9WgXcQ&ved=2ahUKEwjtvPOa8qqFAxWRslYBHVveDeMQyCl6BAgeEAM&usg=AOvVaw0aHtehaphMhOCAkCydRLZU --windowed true --jsonSettings D:/Output.json"
     }
   }
 }

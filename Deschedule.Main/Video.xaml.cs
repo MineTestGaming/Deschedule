@@ -27,7 +27,7 @@ namespace Deschedule.Main
             VideoPlayback.Source = new Uri(Path);
             if (MainWindow.arguments.ContainsKey("volume"))
             {
-                VideoPlayback.Volume = int.Parse(MainWindow.arguments["volume"]);
+                VideoPlayback.Volume = int.Parse(MainWindow.arguments["volume"].Replace("\"", ""));
             }
             VideoPlayback.Play();
             

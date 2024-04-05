@@ -11,7 +11,7 @@
         ResizeMode="NoResize"
         Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="Black">
         <tb:TaskbarIcon IconSource="Icon.ico">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
@@ -60,7 +60,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid Grid.Column="10" Grid.ColumnSpan="5"  Grid.RowSpan="15" Margin="20">
-                <Rectangle Fill="{fluent:AcrylicBrush TargetName=Background, TintColor=White, TintOpacity=0.6}" RadiusX="8" RadiusY="8" />
+                <Rectangle Fill="{fluent:AcrylicBrush TargetName=Background, TintColor=White, TintOpacity=0.5}" RadiusX="8" RadiusY="8" />
                 <!--ListView x:Name="ScheduleDisplay" Background="Transparent" BorderThickness="0" IsEnabled="False">
                     <ListView.View>
                         <GridView x:Name="GridviewDisplay">
