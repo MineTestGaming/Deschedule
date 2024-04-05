@@ -10,6 +10,6 @@
       Title="Video">
 
     <Grid Background="Black">
-        <MediaElement Name="VideoPlayback" LoadedBehavior="Manual"/>
+        <MediaElement Name="VideoPlayback" LoadedBehavior="Manual" MediaEnded="VideoPlayback_MediaEnded"/>
     </Grid>
 </Page>

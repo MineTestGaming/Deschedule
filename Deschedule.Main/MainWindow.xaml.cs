@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Deschedule.ExternalDll;
+using Deschedule.Main.Models;
 
 namespace Deschedule.Main
 {
@@ -19,7 +20,8 @@ namespace Deschedule.Main
     public partial class MainWindow : Window
     {
         public static Dictionary<string, string> arguments = new Dictionary<string, string>();
-            string[] args = Environment.GetCommandLineArgs();
+        public List<DisplaySchedule> displaySchedules = [];
+        string[] args = Environment.GetCommandLineArgs();
         public MainWindow()
         {
             InitializeComponent();
@@ -48,9 +50,22 @@ namespace Deschedule.Main
                 Background.Navigate(new Video()) ;
             }
 
-
-
+#if DEBUG
+            Models.ScheduleMgr.GenerateDummyData();
+#endif
+            // Listview 美化
             
+            // 读取课程
+            displaySchedules = Models.ScheduleMgr.ConvertSchedule();
+            ScheduleDisplay.ItemsSource = displaySchedules;
+
+
+
+
+
+
+
+
         }
 
         private void ArgumentNotExpected()

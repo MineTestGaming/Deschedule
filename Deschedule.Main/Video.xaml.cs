@@ -30,11 +30,17 @@ namespace Deschedule.Main
                 VideoPlayback.Volume = int.Parse(MainWindow.arguments["volume"]);
             }
             VideoPlayback.Play();
+            
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void VideoPlayback_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            VideoPlayback.Position = TimeSpan.MinValue;
         }
     }
 }
