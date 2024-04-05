@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Deschedule.ExternalDll;
 using Deschedule.Main.Models;
+using Newtonsoft.Json.Linq;
 
 namespace Deschedule.Main
 {
@@ -48,6 +49,10 @@ namespace Deschedule.Main
             if (arguments.ContainsKey("videoPath"))
             {
                 Background.Navigate(new Video()) ;
+            }
+            if (arguments.ContainsKey("jsonSettings"))
+            {
+                Models.ScheduleMgr.ImportSettings(arguments["jsonSettings"]);
             }
 
 #if DEBUG

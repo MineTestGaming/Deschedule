@@ -1,13 +1,17 @@
-﻿namespace Deschedule.Main.Models
+﻿using Newtonsoft.Json;
+using System.IO;
+using System.Text.Json;
+
+namespace Deschedule.Main.Models
 {
     public class Schedule
     {
         public int Id { get; set; }
-        public int startHr { get; set; }
-        public int startMin { get; set; }
-        public int endHr { get; set; }
-        public int endMin { get; set; }
-        public string lessonType { get; set; }
+        public required int startHr { get; set; }
+        public required int startMin { get; set; }
+        public required int endHr { get; set; }
+        public required int endMin { get; set; }
+        public required string lessonType { get; set; }
     }
 
     public class ScheduleMgr
@@ -25,6 +29,7 @@
             Schedules.Add(new Schedule { startHr = 15, startMin = 05, endHr = 15, endMin = 45, lessonType = "生物" });
             Schedules.Add(new Schedule { startHr = 15, startMin = 55, endHr = 16, endMin = 35, lessonType = "生物" });
             Schedules.Add(new Schedule { startHr = 16, startMin = 45, endHr = 17, endMin = 25, lessonType = "生物" });
+
         }
 
         public static List<Schedule> LoadSchedule()
@@ -40,6 +45,13 @@
                 displaySchedules.Add(new DisplaySchedule { Time = schedule.startHr.ToString("00") + ":" + schedule.startMin.ToString("00") + "-" + schedule.endHr.ToString("00") + ":" + schedule.endMin.ToString("00"), Type = schedule.lessonType.ToString() });
             }
             return displaySchedules;
+        }
+
+        public static void ImportSettings(string location)
+        {
+            string content = File.ReadAllText(location);
+            Schedules.Clear();
+            Schedules = JsonConvert.DeserializeObject<List<Schedule>>(content);
         }
     }
 
