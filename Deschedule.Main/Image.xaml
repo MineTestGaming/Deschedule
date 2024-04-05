@@ -9,6 +9,6 @@
       Title="Image">
 
     <Grid>
-        
+        <Image x:Name="ImgContent" Stretch="UniformToFill" />
     </Grid>
 </Page>

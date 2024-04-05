@@ -23,6 +23,11 @@ namespace Deschedule.Main
         public Image()
         {
             InitializeComponent();
+            BitmapImage Image = new BitmapImage();
+            Image.BeginInit();
+            Image.UriSource = new Uri(MainWindow.arguments["imagePath"].Replace("\"", ""));
+            Image.EndInit();
+            ImgContent.Source = Image;
         }
     }
 }

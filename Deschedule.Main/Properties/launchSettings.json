@@ -2,7 +2,7 @@
   "profiles": {
     "Deschedule.Main": {
       "commandName": "Project",
-      "commandLineArgs": "--videoPath C:/TestVideo.mp4 --jsonSettings D:/Output.json"
+      "commandLineArgs": "--imagePath \"D:\\thumb-1920-1137852_waifu2x_2x_2n_png.png\" --jsonSettings D:/Output.json"
     }
   }
 }

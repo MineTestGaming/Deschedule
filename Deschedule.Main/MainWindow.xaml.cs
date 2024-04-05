@@ -50,6 +50,10 @@ namespace Deschedule.Main
             {
                 Background.Navigate(new Video()) ;
             }
+            if (arguments.ContainsKey("imagePath"))
+            {
+                Background.Navigate(new Image()) ;
+            }
             if (arguments.ContainsKey("jsonSettings"))
             {
                 Models.ScheduleMgr.ImportSettings(arguments["jsonSettings"]);
