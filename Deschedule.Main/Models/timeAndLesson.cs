@@ -6,7 +6,7 @@ namespace Deschedule.Main.Models
 {
     public class Schedule
     {
-        public int Id { get; set; }
+
         public required int startHr { get; set; }
         public required int startMin { get; set; }
         public required int endHr { get; set; }

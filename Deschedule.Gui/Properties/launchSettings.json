@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Deschedule.Gui (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Deschedule.Gui (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
