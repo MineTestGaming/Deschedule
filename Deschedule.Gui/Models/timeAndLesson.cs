@@ -20,12 +20,12 @@ namespace Deschedule.Main.Models
         {
             if (PropertyChanged != null)
             {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                this.PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }
 
-    
+
     public partial class Schedule : ViewModelBase
     {
         private int id;
@@ -48,12 +48,34 @@ namespace Deschedule.Main.Models
         public string lessonType
         { get { return lessontype; } set { lessontype = value; OnPropertyChange(); } }
     }
-    
 
+/*
+    public partial class Schedule : ViewModelBase
+    {
+        private int id;
+        private int starthr;
+        private int startmin;
+        private int endmin;
+        private int endhr;
+        private string lessontype;
 
-
+        public int Id
+        { get { return id; } set { id = value; } }
+        public int startHr
+        { get { return starthr; } set { starthr = value;  } }
+        public int startMin
+        { get { return startmin; } set { startmin = value;  } }
+        public int endHr
+        { get { return endhr; } set { endhr = value;  } }
+        public int endMin
+        { get { return endmin; } set { endmin = value;  } }
+        public string lessonType
+        { get { return lessontype; } set { lessontype = value;  } }
+    }
+*/
     public class ScheduleMgr
     {
+        private static ObservableCollection<Schedule> schedules = new ObservableCollection<Schedule>();
         public static ObservableCollection<Schedule> Schedules { get; set; }
 
         public static void GenerateDummyData()
