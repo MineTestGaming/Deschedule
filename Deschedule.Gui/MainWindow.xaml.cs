@@ -85,11 +85,11 @@ namespace Deschedule.Gui
         private async void Debug_Click(object sender, RoutedEventArgs e)
         {
             string DebugInfo = "Debug Information Generated" + "|" + FilePath;
-            this.Title = "Deschedule ÉèÖÃ" + DebugInfo;
+            this.Title = "Deschedule è®¾ç½®" + DebugInfo;
             ContentDialog messageDialog = new ContentDialog();
             messageDialog.XamlRoot = App.m_window.Content.XamlRoot;
             messageDialog.Content = DebugInfo;
-            messageDialog.CloseButtonText = "ºÃ";
+            messageDialog.CloseButtonText = "å¥½";
             await messageDialog.ShowAsync();
         }
     }

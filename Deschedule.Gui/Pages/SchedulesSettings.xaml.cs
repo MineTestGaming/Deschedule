@@ -36,37 +36,37 @@ namespace Deschedule.Gui
 
                 switch (DateSelection.SelectedItem)
                 {
-                    case "周一":
+                    case "鍛ㄤ竴":
                         MainWindow.FilePath = Environment.CurrentDirectory + "\\ScheduleSets\\" + "Monday.json";
                         ScheduleMgr.ReadDataForUI(MainWindow.FilePath, dispatcher);
                         break;
 
-                    case "周二":
+                    case "鍛ㄤ簩":
                         MainWindow.FilePath = Environment.CurrentDirectory + "\\ScheduleSets\\" + "Tuesday.json";
                         ScheduleMgr.ReadDataForUI(MainWindow.FilePath, dispatcher);
                         break;
 
-                    case "周三":
+                    case "鍛ㄤ笁":
                         MainWindow.FilePath = Environment.CurrentDirectory + "\\ScheduleSets\\" + "Wednesday.json";
                         ScheduleMgr.ReadDataForUI(MainWindow.FilePath, dispatcher);
                         break;
 
-                    case "周四":
+                    case "鍛ㄥ洓":
                         MainWindow.FilePath = Environment.CurrentDirectory + "\\ScheduleSets\\" + "Thursday.json";
                         ScheduleMgr.ReadDataForUI(MainWindow.FilePath, dispatcher);
                         break;
 
-                    case "周五":
+                    case "鍛ㄤ簲":
                         MainWindow.FilePath = Environment.CurrentDirectory + "\\ScheduleSets\\" + "Friday.json";
                         ScheduleMgr.ReadDataForUI(MainWindow.FilePath, dispatcher);
                         break;
 
-                    case "周六":
+                    case "鍛ㄥ叚":
                         MainWindow.FilePath = Environment.CurrentDirectory + "\\ScheduleSets\\" + "Saturday.json";
                         ScheduleMgr.ReadDataForUI(MainWindow.FilePath, dispatcher);
                         break;
 
-                    case "周日":
+                    case "鍛ㄦ棩":
                         MainWindow.FilePath = Environment.CurrentDirectory + "\\ScheduleSets\\" + "Sunday.json";
                         ScheduleMgr.ReadDataForUI(MainWindow.FilePath, dispatcher);
                         break;
